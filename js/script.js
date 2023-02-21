@@ -10,6 +10,7 @@
             <li class="list__item${task.done ? " list__item--done" : ""}">
             <button class="js-done">${task.done ? "✓" : ""}</button>
             ${task.content}
+            <button class="js-remove">🗑</button>
             </li>
             `
         }
@@ -18,15 +19,22 @@
         const toggleDoneButtons = document.querySelectorAll(".js-done");
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
-                tasks[index].done  = !tasks[index].done;
+                tasks[index].done = !tasks[index].done;
                 render();
             })
         })
+
+        const removeButtons = document.querySelectorAll(".js-remove");
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                tasks.splice(index, 1)
+                render();
+            })
+        })
+
     }
 
-    const toggleTaskDone = () => {
-        
-    }
+
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
