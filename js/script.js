@@ -7,12 +7,32 @@
         let htmlString = "";
         for (const task of tasks) {
             htmlString += `
-    <li>
-    ${task.content}
-    </li>
-    `;
-        };
+            <li class="list__item${task.done ? " list__item--done" : ""}">
+            <button class="js-done">${task.done ? "✓" : ""}</button>
+            ${task.content}
+            </li>
+            `
+        }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                tasks[index].done  = !tasks[index].done;
+                render();
+            })
+        })
+    }
+
+    const toggleTaskDone = () => {
+        
+    }
+
+    const addNewTask = (newTaskContent) => {
+        tasks.push({
+            content: newTaskContent,
+        });
+        render();
     }
 
     const init = () => {
@@ -26,10 +46,8 @@
             if (newTaskContent === "") {
                 return;
             }
-            tasks.push({
-                content: newTaskContent,
-            });
-            render();
+            addNewTask(newTaskContent);
+
         });
 
     };
