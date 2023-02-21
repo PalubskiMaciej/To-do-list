@@ -1,7 +1,5 @@
 {
-    const tasks = [{
-        content: "treść"
-    }];
+    const tasks = [];
 
     const render = () => {
         let htmlString = "";
