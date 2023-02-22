@@ -1,17 +1,18 @@
 html {
-    box-sizing: border-box;
-  }
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 .body {
-    margin: 15px auto;
-    max-width: 1000px;
-    padding: 20px;
-    background-color: rgb(231, 231, 231);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+  margin: 15px auto;
+  max-width: 1000px;
+  padding: 20px;
+  background-color: rgb(231, 231, 231);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
 }
