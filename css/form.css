@@ -1,23 +1,22 @@
 .form {
     display: flex;
     flex-wrap: wrap;
+    flex-basis: auto;
 }
 
-.form__fieldset {
-    border-color: rgb(214, 214, 214);
-}
-
-.form__header {
-    border-bottom: 2px solid black;
+@media (max-width: 767px) {
+    .form {
+        display: grid;
+    }
 }
 
 .form__input {
     flex-grow: 2;
     margin: 10px;
     padding: 10px;
-    min-width: 250px;
-    border-color: #dfdfdf;
+    flex-grow: 10;
     font-size: 20px;
+    border: 2px solid #dfdfdf;
 }
 
 .form__button {
@@ -26,13 +25,7 @@
     border: 0px;
     margin: 10px;
     padding: 10px;
-    flex-grow: 0;
     font-size: 20px;
-}
-
-@media (max-width: 767px) {
-    .form__button {
-        flex-grow: 1;
-        max-width: 100%;
-    }
+    max-width: 100%;
+    flex-grow: 0;
 }
