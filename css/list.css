@@ -1,19 +1,44 @@
+.list {
+    padding: 0px;
+    min-height: 50px;
+    font-size: 20px;
+}
+
 .list__item {
     display: flex;
     flex-basis: 10px;
     justify-content: flex-start;
+    margin: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dfdfdf;
+    align-items: center;
 }
 
-.list__item--done {
-    text-decoration: line-through;
+.list__task--done {
+    text-decoration: line-through 2px;
+}
+
+.list__task {
+    margin: 10px;
+    flex-grow: 1;
+    word-break: break-word;
 }
 
 .list__button {
-
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;
+    width: 50px;
+    color: white;
+    background-color: green;
+    border: none;
+    font-size: 20px;
+    height: 50px;
+    flex-shrink: 0;
 }
 
-.list__button--right {
-    display: grid;
-    align-self: end
-}
 
+.list__button--remove {
+
+    background-color: red;
+}

@@ -1,0 +1,38 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form__fieldset {
+    border-color: rgb(214, 214, 214);
+}
+
+.form__header {
+    border-bottom: 2px solid black;
+}
+
+.form__input {
+    flex-grow: 2;
+    margin: 10px;
+    padding: 10px;
+    min-width: 250px;
+    border-color: #dfdfdf;
+    font-size: 20px;
+}
+
+.form__button {
+    color: white;
+    background-color: teal;
+    border: 0px;
+    margin: 10px;
+    padding: 10px;
+    flex-grow: 0;
+    font-size: 20px;
+}
+
+@media (max-width: 767px) {
+    .form__button {
+        flex-grow: 1;
+        max-width: 100%;
+    }
+}
