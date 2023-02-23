@@ -3,7 +3,9 @@
 
     const render = () => {
         let htmlString = "";
+
         for (const task of tasks) {
+            
             htmlString += `
             <li class="list__item">
             <button class="js-done list__button">${task.done ? "✓" : ""}</button>
@@ -13,6 +15,7 @@
             `
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+
         bindEvents();
 
     }
@@ -46,28 +49,33 @@
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
-            content: newTaskContent.value,
+            content: newTaskContent,
         });
         render();
     }
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const newTaskElement = document.querySelector(".js-newTask");
+        const newTaskContent = newTaskElement.value.trim();
+
+        if (newTaskContent === "") {
+            return;
+        }
+        addNewTask(newTaskContent);
+
+        newTaskElement.value = "";
+        
+        newTaskElement.focus();
+    };
+
 
     const init = () => {
         render();
 
         const form = document.querySelector(".js-form");
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            const newTaskContent = document.querySelector(".js-newTask");
-
-            if (newTaskContent.value === "") {
-                return;
-            }
-            addNewTask(newTaskContent);
-            newTaskContent.value = "";
-            newTaskContent.focus();
-        });
-
+        form.addEventListener("submit", onFormSubmit)
     };
     init();
 }
