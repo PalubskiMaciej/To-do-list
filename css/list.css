@@ -25,7 +25,8 @@
 }
 
 .list__button {
-    text-align: center;
+    align-content: center;
+    justify-content: center;
     font-weight: 700;
     width: 30px;
     height: 30px;
