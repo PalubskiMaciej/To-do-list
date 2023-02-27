@@ -7,7 +7,6 @@
 .list__item {
     display: flex;
     flex-basis: 10px;
-    justify-content: flex-start;
     margin: 10px;
     gap: 10px;
     padding: 10px;
@@ -16,11 +15,11 @@
 }
 
 .list__task--done {
-    text-decoration: line-through 2px;
+    text-decoration: line-through solid 2px;
 }
 
 .list__task {
-    
+
     flex-grow: 1;
     word-break: break-word;
 }
@@ -28,8 +27,8 @@
 .list__button {
     text-align: center;
     font-weight: 700;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     color: white;
     background-color: green;
     border: none;
