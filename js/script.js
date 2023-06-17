@@ -6,10 +6,10 @@
 
         for (const task of tasks) {
             htmlString += `
-                <li>
-                    <button class="js-done">${task.done ? "✓" : ""}</button>
+                <li class="list__element">
+                    <button class="js-done list__button">${task.done ? "✓" : ""}</button>
                     <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
-                    <button class="js-remove">🗑</button>
+                    <button class="js-remove list__button list__button--remove">🗑</button>
                 </li > `;
         };
         document.querySelector(".js-list").innerHTML = htmlString;

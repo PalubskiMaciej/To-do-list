@@ -1,0 +1,32 @@
+.list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list__element {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.list__item {
+    flex-grow: 1;
+}
+
+.list__item--done {
+    text-decoration: line-through;
+}
+
+.list__button {
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: green;
+    border: none;
+}
+
+.list__button--remove {
+    background-color: red;
+}
