@@ -23,13 +23,14 @@
 
     }
 
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+    }
+
     const init = () => {
         render();
         const form = document.querySelector(".js-form");
-        form.addEventListener("click", (event) => {
-            event.preventDefault();
-        });
-
+        form.addEventListener("click", onFormSubmit);
 
 
 
