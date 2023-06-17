@@ -23,14 +23,33 @@
 
     }
 
+    const addNewTask = (newTaskContent) => {
+
+        if (newTaskContent === "") {
+            return;
+        }
+        tasks.push({
+            content: newTaskContent,
+        });
+
+        render();
+
+    }
+
     const onFormSubmit = (event) => {
         event.preventDefault();
+
+        const newTask = document.querySelector(".js-newTask");
+        const newTaskContent = newTask.value.trim();
+
+        addNewTask(newTaskContent);
     }
 
     const init = () => {
+
         render();
         const form = document.querySelector(".js-form");
-        form.addEventListener("click", onFormSubmit);
+        form.addEventListener("submit", onFormSubmit);
 
 
 
