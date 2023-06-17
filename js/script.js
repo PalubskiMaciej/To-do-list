@@ -24,6 +24,17 @@
         document.querySelector(".js-list").innerHTML = htmlString;
 
         toggleTaskDone();
+        removeTasks();
+    }
+
+    const removeTasks = () => {
+        const removeButtons = document.querySelectorAll(".js-remove");
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                tasks.splice(index, 1)
+                render();
+            });
+        });
     }
 
 
@@ -36,10 +47,6 @@
                 render();
             });
         });
-
-
-
-
     }
 
     const addNewTask = (newTaskContent) => {
