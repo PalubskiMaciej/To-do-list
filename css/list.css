@@ -31,8 +31,7 @@
     background-color: green;
     border: none;
     flex-shrink: 0;
-    justify-items: center;
-    align-items: center;
+    text-align: center;
 }
 
 .list__button--remove {
