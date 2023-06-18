@@ -2,7 +2,7 @@
 
 ## Demo
 
-![demo]()
+![demo](https://raw.githubusercontent.com/PalubskiMaciej/To-do-list/main/images/demo.gif)
 You can visit my to-do-list here: [To-do-list](https://palubskimaciej.github.io/To-do-list/)
 
 ## Description
