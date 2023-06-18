@@ -1,18 +1,27 @@
 .list {
     padding-left: 0;
     list-style: none;
+    padding: 20px;
 }
 
 .list__element {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 10px;
-    max-width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    padding-top: 0;
+    border-bottom: 2px solid rgb(231, 230, 230);
+    gap: 10px;
+
+
 }
 
 .list__item {
     flex-grow: 1;
+    word-break: break-word;
+
+
 }
 
 .list__item--done {
@@ -25,6 +34,7 @@
     color: white;
     background-color: green;
     border: none;
+    flex-shrink: 0;
 }
 
 .list__button--remove {
