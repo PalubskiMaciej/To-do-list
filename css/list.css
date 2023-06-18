@@ -27,6 +27,7 @@
     color: white;
     background-color: green;
     border: none;
+    text-align: center;
 }
 
 .list__button--remove {
