@@ -5,18 +5,15 @@
 }
 
 .list__element {
-    display: flex;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    margin-top: 10px;
     padding: 10px;
-    padding-top: 0;
     border-bottom: 2px solid rgb(231, 230, 230);
     gap: 10px;
 }
 
 .list__item {
-    flex-grow: 1;
     word-break: break-word;
 }
 
@@ -30,9 +27,6 @@
     color: white;
     background-color: green;
     border: none;
-    flex-shrink: 0;
-    justify-items: center;
-    align-items: center;
 }
 
 .list__button--remove {
