@@ -13,15 +13,11 @@
     padding-top: 0;
     border-bottom: 2px solid rgb(231, 230, 230);
     gap: 10px;
-
-
 }
 
 .list__item {
     flex-grow: 1;
     word-break: break-word;
-
-
 }
 
 .list__item--done {

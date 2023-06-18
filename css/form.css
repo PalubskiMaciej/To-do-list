@@ -8,6 +8,7 @@
 .form__input {
     flex-grow: 1;
     padding: 10px;
+    border-color: 2px solid rgb(231, 230, 230);
 }
 
 @media (max-width: 767px) {
@@ -15,8 +16,6 @@
         display: grid;
         grid-template-columns: 1fr;
     }
-
-
 }
 
 .form__button {
@@ -30,7 +29,6 @@
 .form__button:hover {
     background-color: rgba(0, 128, 128, 0.741);
     cursor: pointer;
-
 }
 
 @media (max-width: 767px) {
