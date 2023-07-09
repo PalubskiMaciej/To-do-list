@@ -1,25 +1,56 @@
 {
     let tasks = [];
 
+    let hideDoneTasks = false;
+
     const render = () => {
         renderTasks();
+        renderButtons();
     }
 
     const renderTasks = () => {
-        let htmlString = "";
+        let htmlTasksString = "";
 
         for (const task of tasks) {
-            htmlString += `
-            <li class="list__element">
+            htmlTasksString += `
+            <li class="list__element
+            ${hideDoneTasks && task.done ? " list__element--hidden" : ""}" >
             <button class="js-done list__button">${task.done ? "✓" : ""}</button>
-            <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
-            <button class="js-remove list__button list__button--remove">🗑</button>
+            <span class="list__item${task.done ? " list__item--done" : ""}" > ${task.content}</span >
+                <button class="js-remove list__button list__button--remove">🗑</button>
         </li > `;
         };
-        document.querySelector(".js-list").innerHTML = htmlString;
+        document.querySelector(".js-list").innerHTML = htmlTasksString;
 
         bindTasksEvents();
     };
+
+    const renderButtons = () => {
+        let htmlButtonsString = "";
+
+        if (tasks.length > 0) {
+            htmlButtonsString += `
+        <span>
+                <button class="js-toggleHideDoneTasks">${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
+                <button>Ukryj ukończone</button>
+        </span>`
+        }
+        document.querySelector(".js-buttons").innerHTML = htmlButtonsString;
+
+        bindButtonsEvents();
+    }
+
+    const bindButtonsEvents = () => {
+        const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasks");
+        if (toggleHideDoneTasksButton) {
+            toggleHideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
+        }
+    }
+
+    const toggleHideDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    }
 
     const removeTask = (index) => {
 
