@@ -30,9 +30,9 @@
 
         if (tasks.length > 0) {
             htmlButtonsString += `
-        <span>
-                <button class="js-toggleHideDoneTasks">${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
-                <button class="js-markAllTasksDone"
+        <span class="section__buttons">
+                <button class="section__button js-toggleHideDoneTasksButton">${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
+                <button class="section__button js-setAllTasksDoneButton"
                 ${tasks.every(({ done }) => done) ? "disabled" : ""}>Ukończ wszystkie</button>
         </span>`
         }
@@ -42,14 +42,14 @@
     }
 
     const bindButtonsEvents = () => {
-        const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasks");
+        const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasksButton");
         if (toggleHideDoneTasksButton) {
             toggleHideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
         }
 
-        const markAllTasksDoneButton = document.querySelector(".js-markAllTasksDone");
-        if (markAllTasksDoneButton) {
-            markAllTasksDoneButton.addEventListener("click", markAllTasksDone);
+        const setAllTasksDoneButton = document.querySelector(".js-setAllTasksDoneButton");
+        if (setAllTasksDoneButton) {
+            setAllTasksDoneButton.addEventListener("click", setAllTasksDone);
         }
     }
 
@@ -58,7 +58,7 @@
         render();
     }
 
-    const markAllTasksDone = () => {
+    const setAllTasksDone = () => {
         tasks = tasks.map((task) => ({
             ...task,
             done: true,
