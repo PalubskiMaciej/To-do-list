@@ -13,6 +13,10 @@
     gap: 10px;
 }
 
+.list__element--hidden {
+    display: none;
+}
+
 .list__item {
     word-break: break-word;
 }
