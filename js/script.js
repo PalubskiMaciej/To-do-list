@@ -2,6 +2,10 @@
     let tasks = [];
 
     const render = () => {
+        renderTasks();
+    }
+
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
@@ -14,7 +18,7 @@
         };
         document.querySelector(".js-list").innerHTML = htmlString;
 
-        bindEvents();
+        bindTasksEvents();
     };
 
     const removeTask = (index) => {
@@ -38,7 +42,7 @@
         render();
     };
 
-    const bindEvents = () => {
+    const bindTasksEvents = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
